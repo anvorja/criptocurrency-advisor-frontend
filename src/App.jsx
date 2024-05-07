@@ -19,7 +19,7 @@ import {
 } from "@mui/material";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Mytoolbar from "./components/menu";
-import NewsCard from "./components/NewsCard";
+import Getnews from "./components/Getnews";
 import Criptos from "./components/Criptos";
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
         <Mytoolbar />
         <Routes>
           <Route path="/" element={<Criptos />} />
-          <Route path="/CriptoNoticias" element={<NewsCard />} />
+          <Route path="/CriptoNoticias" element={<Getnews />} />
         </Routes>
       </Router>
     </>
