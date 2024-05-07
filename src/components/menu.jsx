@@ -24,10 +24,15 @@ function Mytoolbar() {
         <AppBar
           position="sticky"
           elevation={2}
-          style={{ backgroundColor: "#3A0F54" }}
+          style={{
+            backgroundColor: "#3A0F54",
+          }}
         >
           <Toolbar
-            sx={{ justifyContent: "space-between", padding: "0px !important" }}
+            sx={{
+              justifyContent: "space-between",
+              padding: "0px !important",
+            }}
           >
             <Box display={"flex"} alignItems={"center"}>
               <Link to="/">
@@ -43,7 +48,12 @@ function Mytoolbar() {
                   />
                 </IconButton>
               </Link>
-              <Typography variant="h6" color="#fff" component="div">
+              <Typography
+                variant="h6"
+                color="#fff"
+                component="div"
+                fontFamily="Merienda"
+              >
                 CRYPTOSCRAPER
               </Typography>
             </Box>
@@ -53,7 +63,11 @@ function Mytoolbar() {
                 component={Link}
                 to="/"
                 variant="contained"
-                sx={{ marginRight: "10px", color: "black" }}
+                sx={{
+                  marginRight: "10px",
+                  color: "black",
+                  fontFamily: "Merienda",
+                }}
               >
                 Inicio
               </Button>
@@ -62,7 +76,11 @@ function Mytoolbar() {
                 component={Link}
                 to="/CriptoNoticias"
                 variant="contained"
-                sx={{ marginRight: "10px", color: "black" }}
+                sx={{
+                  marginRight: "10px",
+                  color: "black",
+                  fontFamily: "Merienda",
+                }}
               >
                 CryptoNoticias
               </Button>
