@@ -29,7 +29,7 @@ function Getnews() {
       fetchDataCalled.current = true;
       setLoading(true);
       try {
-        const { data } = await axios.get("http://127.0.0.1:8000/ver-noticias");
+        const { data } = await axios.get("https://criptocurrency-advisor.onrender.com/ver-noticias");
         setNews(data);
       } catch (error) {
         console.error("Error al obtener los datos:", error);

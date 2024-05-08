@@ -29,9 +29,8 @@ function Criptos() {
 
   const fetchData = async () => {
     try {
-      const { data } = await axios.get("http://127.0.0.1:8000/ver-cryptos");
+      const { data } = await axios.get("https://criptocurrency-advisor.onrender.com/ver-cryptos");
       setMydata(data);
-      console.log("--------------------------------", data);
       setLoading(false);
     } catch (error) {
       console.error("Error al obtener los datos:", error);
@@ -43,7 +42,7 @@ function Criptos() {
     try {
       setLoading2(true);
       const { data } = await axios.get(
-        "http://127.0.0.1:8000/make-crypto-analysis"
+        "https://criptocurrency-advisor.onrender.com/make-crypto-analysis"
       );
       setMyanalysis(data);
       setLoading2(false);
