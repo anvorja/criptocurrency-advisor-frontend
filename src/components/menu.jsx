@@ -38,7 +38,7 @@ function Mytoolbar() {
               <Link to="/">
                 <IconButton edge="start" color="inherit" aria-label="menu">
                   <img
-                    src={"public/icon.png"}
+                    src={"/icon.png"}
                     alt="My Icon"
                     style={{
                       width: "60px",
