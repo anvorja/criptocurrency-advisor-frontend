@@ -16,10 +16,15 @@ import {
 function Criptos() {
   const [paperVisible, setPaperVisible] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [loading2, setLoading2] = useState(true);
   const [mydata, setMydata] = useState([]);
+  const [myanalysis, setMyanalysis] = useState("");
 
   const togglePaperVisibility = () => {
     setPaperVisible(!paperVisible);
+    if (!myanalysis) {
+      fetchAnalysis();
+    }
   };
 
   const fetchData = async () => {
@@ -31,6 +36,20 @@ function Criptos() {
     } catch (error) {
       console.error("Error al obtener los datos:", error);
       setLoading(false);
+    }
+  };
+
+  const fetchAnalysis = async () => {
+    try {
+      setLoading2(true);
+      const { data } = await axios.get(
+        "http://127.0.0.1:8000/make-crypto-analysis"
+      );
+      setMyanalysis(data);
+      setLoading2(false);
+    } catch (error) {
+      console.error("Error al obtener los datos:", error);
+      setLoading2(false);
     }
   };
 
@@ -54,9 +73,22 @@ function Criptos() {
       >
         Resumen
       </Button>
+
+      <Button
+        color="inherit"
+        variant="contained"
+        sx={{
+          margin: "10px 0 0 10px",
+          color: "black",
+          fontFamily: "Merienda",
+        }}
+        onClick={fetchAnalysis}
+      >
+        Actualizar resumen
+      </Button>
       {paperVisible && (
         <Paper elevation={3} style={{ margin: "20px", padding: "10px" }}>
-          <p>Aquí va el texto del resumen</p>
+          {loading || loading2 ? <p>Cargando...</p> : <p>{myanalysis}</p>}
         </Paper>
       )}
       <Paper elevation={3} style={{ margin: "20px", padding: "10px" }}>
