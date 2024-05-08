@@ -113,7 +113,15 @@ function Getnews() {
                   >
                     <DialogContent>
                       <DialogContentText id="alert-dialog-description">
+                        <br />
                         {mynew.summary}
+                      </DialogContentText>
+                      <DialogContentText
+                        id="alert-dialog-description"
+                        style={{ fontFamily: "Merienda", fontSize: "14px" }}
+                      >
+                        <br />
+                        {mynew.authors[0]}
                       </DialogContentText>
                     </DialogContent>
                     <DialogActions>
