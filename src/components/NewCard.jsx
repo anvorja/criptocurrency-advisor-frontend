@@ -1,12 +1,8 @@
 import React from "react";
 import {
-  Box,
-  Button,
-  Card,
   CardActionArea,
   CardContent,
-  CardMedia,
-  Typography,
+  Typography
 } from "@mui/material";
 
 function NewCard(mynew) {
